@@ -193,6 +193,18 @@ class MeasurementRequest(RequestGenerator):
     object_class = Measurement
 
 
+class MyMeasurementRequest(RequestGenerator):
+    """
+    Python generator for Measurement meta api.
+    e.g.
+    for measurement in MeasurementRequest(**{"status": 1}):
+        print(measurement["id"])
+    """
+    url = "/api/v2/measurements/my/"
+    id_filter = "id__in"
+    object_class = Measurement
+
+
 class AnchorRequest(RequestGenerator):
     """
     Python generator for Anchor meta api.
